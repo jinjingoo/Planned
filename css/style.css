@@ -1,0 +1,609 @@
+@charset "utf-8";
+
+:root {
+    --default-color:#333333;
+    --normal-font-color: rgba(29, 29, 29, 1);
+    --hover-color: #17daa3;
+    --background-color: #dadada;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    
+}
+.btn {
+    display: inline-block;
+    color: white;
+    width: 18rem;
+    height: 5rem;
+    line-height: 5rem;
+    border-radius: 2.5rem;
+    border: 1px solid var(--normal-font-color);
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: #ffffff; */
+}
+
+.btn:hover {
+    color: white;
+    border-color: var(--hover-color);
+    background-color: var(--hover-color);
+}
+body {
+    position: relative;
+    
+    width: 100%;
+    background-color: #ffffff;
+    justify-content: center;
+}
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+
+}
+ul,ol,li{
+    list-style: none;
+}
+a{
+    color: var(--default-color);
+text-decoration: none;
+transition: .3s;
+}
+a:hover {
+    font-weight: 700;
+}
+/* 이벤트 스와이프 */
+.event {
+    position: fixed;
+    width: 100%;
+    height: 2.7rem;
+    margin-bottom: 1rem;
+    z-index: 1001;
+}
+.event a {
+    font-size: 1.5rem;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 12px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background-color: rgb(248, 255, 181);
+  }
+
+  /* 헤더 */
+header {
+    position: fixed;
+    height: calc(100px + 2rem);
+    width: 100%;
+    padding-top :2rem;
+    background-color: #f8f8f8;
+    transition: .5s;
+    z-index: 1000;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,1));
+}
+header.on {
+height: 230px;
+}
+header .inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+header h1#logo {
+    margin-top: 10px;
+    height: 70px;
+    width: 70px;
+}
+header h1#logo a img {
+    position: relative;
+    display: block;
+    height: 65px;
+    width: 65px;
+}
+.H-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.H-right nav {
+    width: 100%;
+    margin: 1rem;
+}
+.H-right nav ul {
+float: right;
+}
+.H-right nav ul li {
+float: left;
+margin-right: 2rem;
+}
+.H-right .category {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding-left: 100px;
+    transition: .5s;
+    font-size: 1.5rem;
+}
+.H-right .category.on {
+    padding-left: 50px;
+}
+.H-right .category li {
+    text-align: center;
+    margin: 1rem 1rem;
+    width: 70px;
+}
+.H-right .category li ul.submenu {
+margin-top: 0;
+transform: scaleY(0%);
+width: 100%;
+transition: .5s;
+opacity: 0;
+}
+.H-right .category:hover li ul.submenu.on {
+    display: block;
+    opacity: 1;
+    transform: scaleY(100%);
+    height: 100%;
+    margin-top: 3rem;
+    }
+.search {
+    width: 10rem;
+}
+.btn-success {
+    border: none;
+    transform: translateY(15%);
+}.btn-success img {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+/* 메인영역 */
+main {
+    position: relative;
+    display: block;
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+/* 메인 배너 */
+.mySwiper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 700px;
+    flex-shrink: 1;
+    margin-bottom: 50px;
+    padding-top: calc(2rem + 100px);
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 1;
+
+  }
+  .mySwiper .swiper-button-next,
+  .mySwiper .swiper-button-prev{
+      color:white;
+      background-color: rgba(0,0,0,.5);
+      width: 45px;
+      height: 86px;
+  }
+  .mySwiper .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    background: #fff;
+    opacity: 0.9;
+    border: 1px solid #aaa;
+    text-indent: -9999px;
+    overflow: hidden;
+  }
+  .mySwiper .swiper-pagination-bullet-active {
+    background-color: #111426;
+  }
+  .pagination-wrap {
+    position: absolute;  
+    display: flex;
+    width: 40%;
+    right: 3%;
+    bottom: 3%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .playBtn {
+      position: absolute;
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      font-size: 0;
+      border-radius: 50%;
+      background-color: #111426;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url(../img/banner/ic-main-slider-stop.png);
+      z-index: 10;
+      right: 150px;
+      top: -30px;
+    }
+    .playBtn.on {
+        background-image: url(../img/banner/ic-main-slider-play.png);
+    }
+    .pagination-wrap .more {
+        position: absolute;
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      font-size: 13px;
+      color: #fff;
+      background: #111426 url(../img/banner/ic-banner-more.png) no-repeat right 15px center;
+      padding: 0 40px 0 20px;
+      border-radius: 15px;
+      z-index: 10;
+right: 0;
+top: -30px;
+    }
+
+
+
+
+/* 제품 나열 */
+
+    section#product {
+        position: relative;
+        display: block;
+        height: 450px;
+    }
+    section#product.inner {
+        padding: 0 5rem;
+        overflow: hidden;
+    }
+    section#product h2 {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+    section#product .product-wr {
+        width: 300px;
+        height: 300px;
+        transition: .3s;
+    }
+    section#product .product-wr img {
+        display: block;
+        width: 100%;
+        filter: drop-shadow( 0 0 5px rgba(0,0,0,.3));
+    }
+    section#product .product-wr:hover {
+        transform: scale(105%);
+    }
+    section#product .product-wr span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border: 3px solid #17a3da;
+        border-radius: 0 10px 0 0 ;
+        padding: 3px 15px;
+        background-color: #e6d220;
+        color: #474747;
+    }
+
+
+
+
+
+/* 하단nav */
+
+section#lastnav .inner{
+    position: relative;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+text-align: center;
+font-size: 1.7rem;
+margin: 5rem 0;
+transition: .5s;
+}
+section#lastnav .inner > li{
+    transition: .5s;
+}
+section#lastnav .inner > li:hover {
+transform: scale(130%);
+}
+section#lastnav .inner li ul {
+    margin-top: 2rem;
+}
+section#lastnav .inner li ul li {
+    margin-bottom: 1rem;
+}
+
+
+
+    /* 제품페이지 */
+    #main-pro {
+        width: 100%;
+    display: flex;
+    padding-top: calc(200px + 2rem);
+    }
+    #main-pro .inner {
+        display: flex;
+    }
+    #main-pro .main-pro-img-wrap {
+    
+        width: 50%; min-width: 70rem;
+        height: 50rem;
+       
+    }
+    #main-pro .main-pro-img-wrap .main-pro-img{
+        position: absolute;
+        width: 30%;
+        margin-left: 17rem;
+        margin-top: 5rem;
+    }
+    #main-pro .main-pro-img-wrap .main-pro-img img {
+        border: 2px solid white;
+    
+    }
+    
+    #main-pro .main-pro-img-wrap .main-pro-subimg-wrap {
+        float: left;
+        height: 50rem;
+        width: 15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    #main-pro .main-pro-img-wrap .main-pro-subimg-wrap a {
+    overflow: hidden;
+    width: 9rem;
+    height: 9rem;
+    background-color: #dadada;
+    background-size: cover;
+    border: 1px solid white;
+    margin-left: 5%;
+    }
+    
+    #main-pro .main-pro-img-wrap .main-pro-subimg-wrap a img {
+    width: 100%;
+    height: 100%;
+        }
+    
+    
+    
+        #main-pro .main-pro-des-wrap {
+            position: relative;
+            width: 50%; 
+            height: 55rem;
+            margin: 2rem 0;
+        }
+        #main-pro .main-pro-des-wrap .size-wrap {
+            position: relative;
+            display: block;
+    align-items: center;
+            width: 100%;
+            height: 2rem;
+        }
+        #main-pro .main-pro-des-wrap .size-guide {
+            float: right;
+            margin-right: 10%;
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        #main-pro .main-pro-des-wrap form {
+            float: left;
+        }
+        #main-pro .main-pro-des-wrap select#user-size {
+            display: flex;
+            float: left;
+            width: 30rem;
+            height: 3rem;
+            border-radius: 1rem;
+    
+        }
+    
+    #main-pro .main-pro-des-wrap h2 {
+        font-size: 2.8rem;
+        text-transform: uppercase;
+    }
+    #main-pro .main-pro-des-wrap > p {
+        font-size: 2.1rem;
+        margin: 30px 0;
+    }
+    
+    #main-pro .main-pro-des-wrap .main-pro-des-col-wrap {
+    
+    float: left;
+        width: 100%;
+        margin-bottom: 3rem;
+        }
+    
+    #main-pro .main-pro-des-wrap .main-pro-des-col-wrap a img {
+    margin: 1rem;
+    width: 9rem;
+    height: 9rem;
+    background-color: #dadada;
+    background-size: cover;
+    border: 1px solid white;
+    }
+    .main-pro-des-wrap article {
+        position: relative;
+        display: block;
+    }
+    .main-pro-des-wrap strong {
+        position: relative;
+        display: flex;
+font-size: 2rem;
+line-height: 3rem;
+width: 100%;
+padding: 2rem;
+
+    }
+    #main-pro .main-pro-des-wrap .btn-group {
+    position: absolute;
+    display: flex;
+    right: 25%;
+    text-align: center;
+    justify-content: space-around;
+    
+    }
+    .btn-group .btn.basket{
+        background-color: rgb(188, 255, 175);
+        color:#333
+    }
+    .btn-group .btn.order{
+        margin-left: 3rem;
+        background-color: rgb(139, 156, 252);
+        color:#333
+    }
+    section#product-des-img .inner{
+        position: relative;
+        display: block;
+        margin-bottom: 50px;
+    }
+section#product-des-img img {
+    width: 1200px;
+}
+section#product-des-img strong {
+    position: absolute;
+    left: 3rem;
+    bottom: 3rem;
+    font-size: 5rem;
+    text-shadow: rgb(255, 255, 255) 0px 1px 5px;
+    color: #1f1f1f;
+}
+
+
+/* 리뷰영역 */
+section#product.inner {
+    padding: 0 5rem;
+    overflow: hidden;
+}
+section#product h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+section#product .review-wr {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    transition: .3s;
+    align-items: center;
+}
+section#product .review-wr a {
+    width: 100%;
+}
+section#product .review-wr img {
+    float: left;
+    display: block;
+    width: 50%;
+    height: 50%;
+    filter: drop-shadow( 0 0 5px rgba(0,0,0,.3));
+    margin-right: 10px;
+}
+section#product .review-wr:hover {
+    transform: scale(105%);
+}
+section#product .review-wr p {
+    text-align: start;
+}
+section#product .review-wr strong {
+    margin: 15px 0;
+}
+section#product .review-wr:hover p {
+    font-weight: 500;
+}
+section#product .review-wr .star-wrap {
+    width: 100%;
+}
+section#product .review-wr .rev-con {
+    display: flex;
+    flex-direction: column;
+}
+section#product .review-wr span {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-image: url(../img/product-page/star.png);
+    float: left;
+}
+
+    /* Footer */
+
+    footer{
+        display: block;
+        background-color: #333333;
+        width: 100%;
+        
+    }
+    footer .inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+    }
+    footer .inner img {
+        width: 70px;
+    }
+    footer .f-left {
+        padding-top: 30px;
+    }
+    footer .f-left >li {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        font-size: 1.5rem;
+        line-height: 3rem;
+    }
+    footer .f-left li:last-of-type {
+        margin-top: 20px;
+    }
+    footer .f-left a,footer .f-left p  {
+        color: #aaa;
+    }
+    footer .f-left p:not(:last-of-type):after {
+        content: '';
+        position: absolute;
+        height: 1rem;
+        width: 1px;
+        background-color: #aaa;
+        margin-left: 25px;
+        margin-top: 10px;
+    }
